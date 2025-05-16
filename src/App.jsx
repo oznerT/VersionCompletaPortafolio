@@ -7,6 +7,7 @@ import Clients from './sections/Clients.jsx';
 import Projects from './sections/Projects.jsx';
 import WorkExperience from './sections/Experience.jsx';
 import SmoothSection from './sections/SmoothSection';
+import PassionScroll from './sections/PasionScroll.jsx';
 
 
 const App = () => {
@@ -14,7 +15,8 @@ const App = () => {
     <main className="max-w-7xl mx-auto relative">
       <Navbar />
       <Hero />
-      <SmoothSection />
+      <SmoothSection/>
+      {/* <PassionScroll /> */}
       <About />
       <Projects />
       {/* <Clients /> */}
