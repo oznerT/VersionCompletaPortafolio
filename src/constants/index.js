@@ -36,7 +36,7 @@ export const clientReviews = [
     position: 'Founder of TechGear Shop',
     img: 'assets/review2.png',
     review:
-      'Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional! Fantastic work.',
+      'Renzo’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional! Fantastic work.',
   },
   {
     id: 3,
@@ -44,7 +44,7 @@ export const clientReviews = [
     position: 'Project Manager at UrbanTech ',
     img: 'assets/review3.png',
     review:
-      'I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.',
+      'I can’t say enough good things about Renzo. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.',
   },
   {
     id: 4,
@@ -244,46 +244,46 @@ export const myProjects = [
 //       },
 //     ],
 //   },
-// ];
+ ];
+export const calculateSizes = (isSmall, isMobile, isTablet) => {
+  return {
+    deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.065,
+    deskPosition: isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0],
+    cubePosition: isSmall ? [4, -5, 0] : isMobile ? [5, -5, 0] : isTablet ? [5, -5, 0] : [9, -5.5, 0],
+    reactLogoPosition: isSmall ? [3, 4, 0] : isMobile ? [5, 4, 0] : isTablet ? [5, 4, 0] : [12, 3, 0],
+    ringPosition: isSmall ? [-5, 7, 0] : isMobile ? [-10, 10, 0] : isTablet ? [-12, 10, 0] : [-24, 10, 0],
+    targetPosition: isSmall ? [-5, -10, -10] : isMobile ? [-9, -10, -10] : isTablet ? [-11, -7, -10] : [-13, -13, -10],
+  };
+};
 
-// export const calculateSizes = (isSmall, isMobile, isTablet) => {
-//   return {
-//     deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.065,
-//     deskPosition: isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0],
-//     cubePosition: isSmall ? [4, -5, 0] : isMobile ? [5, -5, 0] : isTablet ? [5, -5, 0] : [9, -5.5, 0],
-//     reactLogoPosition: isSmall ? [3, 4, 0] : isMobile ? [5, 4, 0] : isTablet ? [5, 4, 0] : [12, 3, 0],
-//     ringPosition: isSmall ? [-5, 7, 0] : isMobile ? [-10, 10, 0] : isTablet ? [-12, 10, 0] : [-24, 10, 0],
-//     targetPosition: isSmall ? [-5, -10, -10] : isMobile ? [-9, -10, -10] : isTablet ? [-11, -7, -10] : [-13, -13, -10],
-//   };
-// };
+export const workExperiences = [
+  {
+    id: 1,
+    name: 'GitHub',
+    duration: '@renzotari',
+    title: "Explore my code, side projects, and contributions on GitHub. From passion projects to open source, it’s all there.",
+    icon: '/assets/icons8-github.svg',
+    animation: 'victory',
+    href:"https://github.com/oznerT",
+  },
+  {
+    id: 2,
+    name: 'LinkedIn',
+    duration: 'linkedin.com/in/renzotari',
+    title: "Let’s connect on LinkedIn — I share updates on my journey, experience, and work philosophy.",
+    icon: '/assets/icons8-linkedin.svg',
+    animation: 'clapping',
+    href:"https://www.linkedin.com/in/renzo-tari/",
+  },
+  {
+    id: 3,
+    name: 'Instagram',
+    duration: '@renzotari',
+    title: "A more visual side of me — inspiration, creativity, behind-the-scenes, and bits of my life.",
+    icon: '/assets/instagram.svg',
+    animation: 'salute',
+    href:"https://www.instagram.com/renzotari/",
+  },
 
-// export const workExperiences = [
-//   {
-//     id: 1,
-//     name: 'Framer',
-//     pos: 'Lead Web Developer',
-//     duration: '2022 - Present',
-//     title: "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
-//     icon: '/assets/framer.svg',
-//     animation: 'victory',
-//   },
-//   {
-//     id: 2,
-//     name: 'Figma',
-//     pos: 'Web Developer',
-//     duration: '2020 - 2022',
-//     title: "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
-//     icon: '/assets/figma.svg',
-//     animation: 'clapping',
-//   },
-//   {
-//     id: 3,
-//     name: 'Notion',
-//     pos: 'Junior Web Developer',
-//     duration: '2019 - 2020',
-//     title: "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
-//     icon: '/assets/notion.svg',
-//     animation: 'salute',
-//   },
  ];
 

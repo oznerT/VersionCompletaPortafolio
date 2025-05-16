@@ -3,6 +3,8 @@ import { useRef, useState } from 'react';
 
 import useAlert from '../hooks/useAlert.js';
 import Alert from '../components/Alert.jsx';
+import { motion } from "framer-motion";
+
 
 const Contact = () => {
   const formRef = useRef();
@@ -26,9 +28,9 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
-          to_name: 'JavaScript Mastery',
+          to_name: 'Renzo Tari',
           from_email: form.email,
-          to_email: 'sujata@jsmastery.pro',
+          to_email: 'renzoetari@gmail.com',
           message: form.message,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
@@ -39,7 +41,7 @@ const Contact = () => {
           showAlert({
             show: true,
             text: 'Thank you for your message 😃',
-            type: 'success',
+            type: 'Success',
           });
 
           setTimeout(() => {
@@ -58,76 +60,88 @@ const Contact = () => {
           showAlert({
             show: true,
             text: "I didn't receive your message 😢",
-            type: 'danger',
+            type: 'Danger',
           });
         },
       );
   };
 
-  return (
-    <section className="c-space my-20" id="contact">
-      {alert.show && <Alert {...alert} />}
+ return (
+  <section className="c-space my-20" id="contact">
+    {alert.show && <Alert {...alert} />}
 
-      <div className="relative min-h-screen flex items-center justify-center flex-col">
-        <img src="/assets/terminal.png" alt="terminal-bg" className="absolute inset-0 min-h-screen" />
+    <div className="relative w-full flex flex-col justify-center items-center pt-10 pb-20">
+      {/* Imagen de fondo */}
+      <img
+        src="/assets/terminal.png"
+        alt="terminal-bg"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
 
-        <div className="contact-container">
-          <h3 className="head-text">Let's talk</h3>
-          <p className="text-lg text-white-600 mt-3">
-            Whether you’re looking to build a new website, improve your existing platform, or bring a unique project to
-            life, I’m here to help.
-          </p>
+      {/* Contenido animado */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
+        viewport={{ once: true }}
+        className="contact-container z-10"
+      >
+        <h3 className="head-text">Let's talk</h3>
+        <p className="text-lg text-white-600 mt-3">
+          Whether you’re looking to build a new website, improve your existing platform, or bring a unique project to
+          life, I’m here to help.
+        </p>
 
-          <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col space-y-7">
-            <label className="space-y-3">
-              <span className="field-label">Full Name</span>
-              <input
-                type="text"
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                required
-                className="field-input"
-                placeholder="ex., John Doe"
-              />
-            </label>
+        <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col space-y-7">
+          <label className="space-y-3">
+            <span className="field-label">Full Name</span>
+            <input
+              type="text"
+              name="name"
+              value={form.name}
+              onChange={handleChange}
+              required
+              className="field-input"
+              placeholder="ex., John Doe"
+            />
+          </label>
 
-            <label className="space-y-3">
-              <span className="field-label">Email address</span>
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                required
-                className="field-input"
-                placeholder="ex., johndoe@gmail.com"
-              />
-            </label>
+          <label className="space-y-3">
+            <span className="field-label">Email address</span>
+            <input
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              required
+              className="field-input"
+              placeholder="ex., johndoe@gmail.com"
+            />
+          </label>
 
-            <label className="space-y-3">
-              <span className="field-label">Your message</span>
-              <textarea
-                name="message"
-                value={form.message}
-                onChange={handleChange}
-                required
-                rows={5}
-                className="field-input"
-                placeholder="Share your thoughts or inquiries..."
-              />
-            </label>
+          <label className="space-y-3">
+            <span className="field-label">Your message</span>
+            <textarea
+              name="message"
+              value={form.message}
+              onChange={handleChange}
+              required
+              rows={5}
+              className="field-input"
+              placeholder="Share your thoughts or inquiries..."
+            />
+          </label>
 
-            <button className="field-btn" type="submit" disabled={loading}>
-              {loading ? 'Sending...' : 'Send Message'}
+          <button className="field-btn" type="submit" disabled={loading}>
+            {loading ? "Sending..." : "Send Message"}
+            <img src="/assets/arrow-up.png" alt="arrow-up" className="field-btn_arrow" />
+          </button>
+        </form>
+      </motion.div>
+    </div>
+  </section>
+);
 
-              <img src="/assets/arrow-up.png" alt="arrow-up" className="field-btn_arrow" />
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
-  );
 };
 
 export default Contact;
